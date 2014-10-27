@@ -64,7 +64,8 @@ Table of Contents
    5.  Analysis of Related Work
      5.1.  JOSE
      5.2.  Comparison of JOSE and W3C Subresource Integrity
-   6.  Informative References
+   6.  Architectural Considerations
+   7.  Informative References
 
 1.  Introduction
 
@@ -483,7 +484,28 @@ Table of Contents
    to derive the integrity metadata and add that metadata into the
    relevant places of HTML files.
 
-6.  Informative References
+6.  Architectural Considerations
+
+   The purpose of an object security architecture is to be able to
+   provide more flexible security services than strict end-to-end
+   encryption.  A content owner should be able to express what security
+   levels different objects should be associated with.
+
+   Such an architecture needs to define two types of logical channels
+   between end-points.  One channel is strictly end-to-end encrypted
+   where sensitive data is transferred between end points without the
+   risk of third-party access.  The second channel is more relaxed in
+   allowing third-party nodes be part of the flow (i.e hop-by-hop
+   encrypted channel).  The amount of information exposed in the second
+   channel is determined by the content provider alone or in agreement
+   with the end-user.
+
+   There are several ways to design an architecture that fulfills these
+   requirements.  An important question to analyze is whether an object
+   security architecture should be designed at the application layer or
+   further down the stack as an alternative to TLS.
+
+7.  Informative References
 
    [JWE]      Jones, M. and J. Hildebrand, "JSON Web Encryption (JWE)",
               draft-ietf-jose-json-web-encryption-36 (work in progress),
