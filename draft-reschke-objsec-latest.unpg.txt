@@ -63,6 +63,7 @@ Table of Contents
        intermediaries
    5.  Analysis of Related Work
      5.1.  JOSE
+     5.2.  Comparison of JOSE and W3C Subresource Integrity
    6.  Informative References
 
 1.  Introduction
@@ -442,6 +443,46 @@ Table of Contents
    [[anchor6: The question then remains: How to serialize various kinds
    of content into an octet sequence?]]
 
+5.2.  Comparison of JOSE and W3C Subresource Integrity
+
+   Note that the comparison is based on SRI, first Public Working Draft,
+   18 March 2014 ([SRI]).
+
+   Role of the content author:
+
+   A content author using JOSE, may host Web (or other) content on a web
+   or application server which is run by a hosting company e.g. as part
+   of an IaaS offering.  In this situation, the task of generating a
+   digest, a message authentication code, a digital signature, or of
+   encrypting the resource may be performed by the hosting company as a
+   feature of a web or application server (which may host web resources
+   of multiple content authors or tenants).  No extra effort would be
+   required on the side of the content author.
+
+   With W3C Subresource Integrity, it would fall on the content author
+   (e.g.  BBC) to ex-ante
+
+   1.  verify the trustworthiness of particular web resources they want
+       to use in their website
+
+   2.  pre-compute the hash values or digests over those resources
+
+   3.  add the related metadata (hash algorithm used, hash value,
+       content type) as an integrity attribute to the HTML mark-up of
+       their web pages.
+
+   Situation with dynamically changing content:
+
+   JOSE is a mechanism to e.g. create a digest for particular content or
+   encrypt particular content at the time of transmission from a server
+   to a client.  It doesn't matter how old or new the content is.
+
+   With W3C Subresource Integrity, any change in a web resource (like a
+   script, image, downloadable file, Cascading Style Sheet etc.) would
+   require the content author to re-compute the digest, use the result
+   to derive the integrity metadata and add that metadata into the
+   relevant places of HTML files.
+
 6.  Informative References
 
    [JWE]      Jones, M. and J. Hildebrand, "JSON Web Encryption (JWE)",
@@ -451,6 +492,13 @@ Table of Contents
    [RFC5083]  Housley, R., "Cryptographic Message Syntax (CMS)
               Authenticated-Enveloped-Data Content Type", RFC 5083,
               November 2007.
+
+   [SRI]      Braun, F., Akhawe, D., Weinberger, J., and M. West,
+              "Subresource Integrity", W3C Working Draft WD-SRI-
+              20140318, March 2014,
+              <http://www.w3.org/TR/2014/WD-SRI-20140318/>.
+
+              Latest version available at <http://www.w3.org/TR/SRI/>.
 
 Authors' Addresses
 

@@ -369,9 +369,49 @@ A secure object (JWE object) includes as its components:
 <t>
   <cref>The question then remains: How to serialize various kinds of content into an octet sequence?</cref>
 </t>
-
-
 </section>
+
+<section title="Comparison of JOSE and W3C Subresource Integrity">
+<t>
+  Note that the comparison is based on SRI, first Public Working Draft,
+  18 March 2014 (<xref target="SRI"/>).
+</t>
+<t>
+  Role of the content author: 
+</t>
+<t>
+  A content author using JOSE, may host Web (or other) content on a web or
+  application server which is run by a hosting company e.g. as part of an IaaS
+  offering. In this situation, the task of generating a digest, a message
+  authentication code, a digital signature, or of encrypting the resource
+  may be performed by the hosting company as a feature of a web or application
+  server (which may host web resources of multiple content authors or tenants).
+  No extra effort would be required on the side of the content author.
+</t>
+<t>
+  With W3C Subresource Integrity, it would fall on the content author (e.g. BBC) to ex-ante
+  <list style="numbers">
+    <t>verify the trustworthiness of particular web resources they want to use in their website</t>
+    <t>pre-compute the hash values or digests over those resources</t>
+    <t>add the related metadata (hash algorithm used, hash value, content type) as an integrity attribute to the HTML mark-up of their web pages.</t>
+  </list>  
+</t>
+<t>
+Situation with dynamically changing content:
+</t>
+<t>
+  JOSE is a mechanism to e.g. create a digest for particular content or
+  encrypt particular content at the time of transmission from a server to a
+  client. It doesn't matter how old or new the content is.
+</t>  
+<t>
+  With W3C Subresource Integrity, any change in a web resource (like a script,
+  image, downloadable file, Cascading Style Sheet etc.) would require the content
+  author to re-compute the digest, use the result to derive the integrity
+  metadata and add that metadata into the relevant places of HTML files. 
+</t>  
+</section>
+
 </section>
 
 
@@ -394,6 +434,22 @@ A secure object (JWE object) includes as its components:
           <date month="October" day="24" year="2014"/>
         </front>
         <seriesInfo name="Internet-Draft" value="draft-ietf-jose-json-web-encryption-36"/>
+      </reference>
+      <reference anchor='SRI'
+                 target='http://www.w3.org/TR/2014/WD-SRI-20140318/'>
+        <front>
+          <title>Subresource Integrity</title>
+          <author fullname='Frederik Braun' surname='Braun' initials='F.'/>
+          <author fullname='Devdatta Akhawe' surname='Akhawe' initials='D.'/>
+          <author fullname='Joel Weinberger' surname='Weinberger' initials='J.'/>
+          <author fullname='Mike West' surname='West' initials='M.'/>
+          <date year='2014' month='March' day='18'/>
+        </front>
+        <seriesInfo name='W3C Working Draft' value='WD-SRI-20140318'/>
+        <annotation>
+          Latest version available at
+          <eref target='http://www.w3.org/TR/SRI/'/>.
+        </annotation>
       </reference>
     </references>
   
