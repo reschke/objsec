@@ -16,7 +16,7 @@ Expires: April 30, 2015                                   Alcatel-Lucent
                                                         October 27, 2014
 
 
-                         Object-Level Security
+  A rationale for fine-grained intermediary-aware end-to-end protocols
                       draft-reschke-objsec-latest
 
 Abstract

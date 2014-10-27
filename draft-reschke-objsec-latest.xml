@@ -30,7 +30,7 @@
   <!--<x:feedback template="mailto:ietf-http-wg@w3.org?subject={docname},%20%22{section}%22&amp;body=&lt;{ref}&gt;:"/>-->
 
 	<front>
-  <title>Object-Level Security</title>
+  <title abbrev="fine-grained end-to-end">A rationale for fine-grained intermediary-aware end-to-end protocols</title>
   <author initials="D." surname="Druta" fullname="Dan Druta">
     <organization>AT&amp;T</organization>
     <address>
