@@ -462,9 +462,32 @@ Situation with dynamically changing content:
 </t>
 </section>
 
-<section title="Privacy impact">
+<section title="Privacy Impact">
 <t>
 <cref>TBD</cref>
+</t>
+</section>
+
+<section title="Security Considerations">
+<t>
+<cref>TBD</cref>
+</t>
+</section>
+
+<section title="Contributors">
+<t>
+  The following people are not listed as authors, but contributed
+  significantly to the discussions leading to this document:
+  Liliana Dinale,
+  Vijay Gurbani,
+  Mike Jones,
+  Eliot Lear,
+  Salvatore Loreto,
+  John Mattsson,
+  Sanjay Mishram,
+  Robert Moskowitz,
+	Kevin Smith,
+  Dan Wing.
 </t>
 </section>
 

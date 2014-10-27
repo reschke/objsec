@@ -70,8 +70,10 @@ Table of Contents
    9.  Impacts on the current browser architecture
    10. Impacts on the existing deployment / how to make this
        proposal coexist with the current
-   11. Privacy impact
-   12. Informative References
+   11. Privacy Impact
+   12. Security Considerations
+   13. Contributors
+   14. Informative References
 
 1.  Introduction
 
@@ -528,11 +530,22 @@ Table of Contents
 
    [[anchor16: TBD]]
 
-11.  Privacy impact
+11.  Privacy Impact
 
    [[anchor18: TBD]]
 
-12.  Informative References
+12.  Security Considerations
+
+   [[anchor20: TBD]]
+
+13.  Contributors
+
+   The following people are not listed as authors, but contributed
+   significantly to the discussions leading to this document: Liliana
+   Dinale, Vijay Gurbani, Mike Jones, Eliot Lear, Salvatore Loreto, John
+   Mattsson, Sanjay Mishram, Robert Moskowitz, Kevin Smith, Dan Wing.
+
+14.  Informative References
 
    [JWE]      Jones, M. and J. Hildebrand, "JSON Web Encryption (JWE)",
               draft-ietf-jose-json-web-encryption-36 (work in progress),
