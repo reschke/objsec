@@ -438,6 +438,36 @@ Situation with dynamically changing content:
 </section>
 
 
+<section title="Analysis of the Impacts on HTTP2">
+<t>
+<cref>TBD</cref>
+</t>
+</section>
+
+<section title="Analysis of the Impacts on TLS">
+<t>
+<cref>TBD</cref>
+</t>
+</section>
+
+<section title="Impacts on the current browser architecture">
+<t>
+<cref>TBD</cref>
+</t>
+</section>
+
+<section title="Impacts on the existing deployment / how to make this proposal coexist with the current">
+<t>
+<cref>TBD</cref>
+</t>
+</section>
+
+<section title="Privacy impact">
+<t>
+<cref>TBD</cref>
+</t>
+</section>
+
   </middle>
   <back>
     <references title="Informative References">

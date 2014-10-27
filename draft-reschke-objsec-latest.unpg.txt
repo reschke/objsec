@@ -65,7 +65,13 @@ Table of Contents
      5.1.  JOSE
      5.2.  Comparison of JOSE and W3C Subresource Integrity
    6.  Architectural Considerations
-   7.  Informative References
+   7.  Analysis of the Impacts on HTTP2
+   8.  Analysis of the Impacts on TLS
+   9.  Impacts on the current browser architecture
+   10. Impacts on the existing deployment / how to make this
+       proposal coexist with the current
+   11. Privacy impact
+   12. Informative References
 
 1.  Introduction
 
@@ -505,7 +511,28 @@ Table of Contents
    security architecture should be designed at the application layer or
    further down the stack as an alternative to TLS.
 
-7.  Informative References
+7.  Analysis of the Impacts on HTTP2
+
+   [[anchor10: TBD]]
+
+8.  Analysis of the Impacts on TLS
+
+   [[anchor12: TBD]]
+
+9.  Impacts on the current browser architecture
+
+   [[anchor14: TBD]]
+
+10.  Impacts on the existing deployment / how to make this proposal
+     coexist with the current
+
+   [[anchor16: TBD]]
+
+11.  Privacy impact
+
+   [[anchor18: TBD]]
+
+12.  Informative References
 
    [JWE]      Jones, M. and J. Hildebrand, "JSON Web Encryption (JWE)",
               draft-ietf-jose-json-web-encryption-36 (work in progress),
