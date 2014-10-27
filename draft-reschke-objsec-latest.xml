@@ -285,132 +285,15 @@ Intermediaries:
 
 <section title="Analysis of Related Work">
 <t>
-  The concept of object security is not something new, several approaches targeted at different application areas exist today.
-</t>
-<section title="JOSE">
-<t>
-  JOSE stands for "JSON Object Signing and Encryption". It is a series of standards produced by the IETF under the JOSE charter (<eref target="https://datatracker.ietf.org/wg/jose/charter/"/>).
+  The concept of object security is not something new, several approaches targeted at different application areas exist today, and we can even root them at the original S/MIME proposal (<xref target="RFC5751"/>).
 </t>
 <t>
-  JOSE offers encryption, digital signatures, and Message Authentication Codes (MACs). Thus, it appears to support the following cryptographic services:
+  As one of our first tasks, we intend to perform a detailed analysis of this related work, producing a list of the gaps of each technology solution in the scenarios we foresee. In particular, we have already identified at least a couple of such related work:
   <list style="symbols">
-      <t>Confidentiality (via encryption)</t>
-      <t>Data integrity (via message authentication codes)</t>
-      <t>Data origin authentication (via message authentication codes)</t>
-      <t>Non-repudiation (via digital signatures)</t>
-      <t>Entity authentication (in combination with the possible use of public-key certificates).</t>
+    <t>JOSE, which stands for "JSON Object Signing and Encryption". It is a series of standards produced by the IETF under the JOSE charter (<eref target="https://datatracker.ietf.org/wg/jose/charter/"/>) offering encryption, digital signatures, and Message Authentication Codes (MACs).</t>
+    <t>Subresource Integrity (<xref target="SRI"/>), a W3C specification defining mechanisms by which user agents may verify that a fetched resource has been delivered without unexpected manipulation.</t>
   </list>
 </t>
-<t>
-  Note that in JOSE, many things are described using JSON notation, e.g. for
-  defining details of cryptographic keys or for defining the structure of a protected content object.
-</t>
-<t>
-  The JSON Web Encryption (<xref target="JWE"/>) spec states:
-</t>
-<t>
-  JSON Web Encryption represents encrypted content using JavaScript Object
-  Notation (JSON) based data structures. The JWE cryptographic mechanisms
-  encrypt and provide integrity protection for an arbitrary sequence of octets
-  Although encrypted content can be represented as a JSON data structure, the
-  data to protect can be an "arbitrary sequence of octets".
-</t>
-<t>
-  JWE is thus a data structure representing an encrypted and integrity
-  protected message. This data structure can be the body of an HTTP response
-  message.
-</t>
-<t>
-  JWE supports per default combined encryption and data origin authentication
-  through Authenticated Encryption with Associated Data (AEAD). This is
-  comparable to authenticated encryption in Cryptographic Message Syntax (CMS)
-  (<xref target="RFC5083"/>).
-</t>
-<t>
-A secure object (JWE object) includes as its components:
-<list style="numbers">
-<t>JOSE Header: a JSON object that contains the parameters describing the cryptographic operations and parameters used. This header includes 3 sub-headers: Protected Header, Shared Unprotected Header, and Per-Recipient Unprotected Header.</t>
-<t>JWE Encrypted Key: this is the encrypted Content Encryption Key.</t>
-<t>JWE AAD: Additional value to be integrity protected (additional authenticated data).</t>
-<t>JWE Initialization Vector: used with the encryption of the plaintext.</t>
-<t>JWE Ciphertext: resulting from encryption of the plaintext with additional authenticated data.</t>
-<t>JWE Authentication Tag: resulting from authenticated encryption.</t>
-</list>
-</t>
-<t>
-  In the case of JWE JSON Serialization above object is finally represented
-  as six base64url encoded strings and two unprotected JSON object values, all
-  being represented as members within a JSON object.
-</t>
-<t>
-  JWE also supports data compression before encryption. In preparation for
-  encryption the (possibly compressed) plaintext must be serialized into an octet sequence.
-</t>
-<t>
-  Similar to Cryptographic Message Syntax (CMS), JWE supports a number of key
-  management modes. These are methods for the receiver to determine the Content
-  Encryption Key (CEK). To illustrates such methods for JWE:
-  <list style="numbers">
-    <t>Key Encryption: the CEK is encrypted to the receiver using the public key of the receiver.</t>
-    <t>Key Wrapping: the CEK is encrypted to the receiver using a symmetric key.</t>
-    <t>Direct Key Agreement: a key agreement algorithm is used to jointly agree on a CEK.</t> 
-    <t>Key Agreement with Key Wrapping: both parties agree on a symmetric key which the sender in turn then uses to encrypt the CEK to the receiver.</t>
-    <t>Direct Encryption: the symmetric CEK is already shared by both parties and available to them.</t>
-  </list>  
-</t>  
-<t>
-  JOSE protected payload can be any content, and need not be a representation of a JSON object.
-</t>
-<t>
-  The JWE specification gives an example in Appendix A where a plain text
-  string is turned into an octet sequence which is encrypted and encoded in the
-  BASE64URL format (<xref target="JWE"/>).
-</t>
-<t>
-  <cref>The question then remains: How to serialize various kinds of content into an octet sequence?</cref>
-</t>
-</section>
-
-<section title="Comparison of JOSE and W3C Subresource Integrity">
-<t>
-  Note that the comparison is based on SRI, first Public Working Draft,
-  18 March 2014 (<xref target="SRI"/>).
-</t>
-<t>
-  Role of the content author: 
-</t>
-<t>
-  A content author using JOSE, may host Web (or other) content on a web or
-  application server which is run by a hosting company e.g. as part of an IaaS
-  offering. In this situation, the task of generating a digest, a message
-  authentication code, a digital signature, or of encrypting the resource
-  may be performed by the hosting company as a feature of a web or application
-  server (which may host web resources of multiple content authors or tenants).
-  No extra effort would be required on the side of the content author.
-</t>
-<t>
-  With W3C Subresource Integrity, it would fall on the content author (e.g. BBC) to ex-ante
-  <list style="numbers">
-    <t>verify the trustworthiness of particular web resources they want to use in their website</t>
-    <t>pre-compute the hash values or digests over those resources</t>
-    <t>add the related metadata (hash algorithm used, hash value, content type) as an integrity attribute to the HTML mark-up of their web pages.</t>
-  </list>  
-</t>
-<t>
-Situation with dynamically changing content:
-</t>
-<t>
-  JOSE is a mechanism to e.g. create a digest for particular content or
-  encrypt particular content at the time of transmission from a server to a
-  client. It doesn't matter how old or new the content is.
-</t>  
-<t>
-  With W3C Subresource Integrity, any change in a web resource (like a script,
-  image, downloadable file, Cascading Style Sheet etc.) would require the content
-  author to re-compute the digest, use the result to derive the integrity
-  metadata and add that metadata into the relevant places of HTML files. 
-</t>  
-</section>
 </section>
 
 <section title="Architectural Considerations">
@@ -494,22 +377,14 @@ Situation with dynamically changing content:
   </middle>
   <back>
     <references title="Informative References">
-      <reference anchor="RFC5083">
+      <reference anchor="RFC5751">
         <front>
-          <title>Cryptographic Message Syntax (CMS) Authenticated-Enveloped-Data Content Type</title>
-          <author initials="R." surname="Housley" fullname="R. Housley"/>
-          <date year="2007" month="November"/>
+          <title>Secure/Multipurpose Internet Mail Extensions (S/MIME) Version 3.2 Message Specification</title>
+          <author initials="B." surname="Ramsdell" fullname="B. Ramsdell"/>
+          <author initials="S." surname="Turner" fullname="S. Turner"/>
+          <date year="2010" month="January"/>
         </front>
-        <seriesInfo name="RFC" value="5083"/>
-      </reference>
-      <reference anchor="JWE">
-        <front>
-        <title>JSON Web Encryption (JWE)</title>
-          <author initials="M." surname="Jones" fullname="Michael Jones"/>
-          <author initials="J." surname="Hildebrand" fullname="Joe Hildebrand"/>
-          <date month="October" day="24" year="2014"/>
-        </front>
-        <seriesInfo name="Internet-Draft" value="draft-ietf-jose-json-web-encryption-36"/>
+        <seriesInfo name="RFC" value="5751"/>
       </reference>
       <reference anchor='SRI'
                  target='http://www.w3.org/TR/2014/WD-SRI-20140318/'>
