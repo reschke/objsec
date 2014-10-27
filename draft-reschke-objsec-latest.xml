@@ -31,6 +31,30 @@
 
 	<front>
   <title>Object-Level Security</title>
+  <author initials="D." surname="Druta" fullname="Dan Druta">
+    <organization>AT&amp;T</organization>
+    <address>
+      <email>dd5826@att.com</email>	
+    </address>
+  </author>
+  <author initials="T." surname="Fossati" fullname="Thomas Fossati">
+    <organization>Alcatel-Lucent</organization>
+    <address>
+      <email>thomas.fossati@alcatel-lucent.com</email>	
+    </address>
+  </author>
+  <author initials="M." surname="Ihlar" fullname="Marcus Ihlar">
+    <organization>Ericsson</organization>
+    <address>
+      <email>marcus.ihlar@ericsson.com</email>	
+    </address>
+  </author>
+  <author initials="G." surname="Klas" fullname="Guenter Klas">
+    <organization>Vodafone</organization>
+    <address>
+      <email>Guenter.Klas@vodafone.com</email>	
+    </address>
+  </author>
   <author initials="D. R." surname="Lopez" fullname="Diego R. Lopez">
     <organization>Telefonica I+D</organization>
     <address>

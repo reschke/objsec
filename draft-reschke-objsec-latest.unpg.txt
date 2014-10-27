@@ -1,10 +1,18 @@
 
 
 
-Network Working Group                                           D. Lopez
-Internet-Draft                                            Telefonica I+D
-Intended status: Standards Track                         J. Reschke, Ed.
-Expires: April 30, 2015                                       greenbytes
+Network Working Group                                           D. Druta
+Internet-Draft                                                      AT&T
+Intended status: Standards Track                              T. Fossati
+Expires: April 30, 2015                                   Alcatel-Lucent
+                                                                M. Ihlar
+                                                                Ericsson
+                                                                 G. Klas
+                                                                Vodafone
+                                                                D. Lopez
+                                                          Telefonica I+D
+                                                         J. Reschke, Ed.
+                                                              greenbytes
                                                         October 27, 2014
 
 
@@ -192,6 +200,30 @@ Table of Contents
    (<https://datatracker.ietf.org/wg/jose/charter/>).
 
 Authors' Addresses
+
+   Dan Druta
+   AT&T
+
+   EMail: dd5826@att.com
+
+
+   Thomas Fossati
+   Alcatel-Lucent
+
+   EMail: thomas.fossati@alcatel-lucent.com
+
+
+   Marcus Ihlar
+   Ericsson
+
+   EMail: marcus.ihlar@ericsson.com
+
+
+   Guenter Klas
+   Vodafone
+
+   EMail: Guenter.Klas@vodafone.com
+
 
    Diego R. Lopez
    Telefonica I+D
