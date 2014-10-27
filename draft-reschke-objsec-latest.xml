@@ -37,7 +37,7 @@
       <email>diego.r.lopez@telefonica.com</email>	
     </address>
   </author>
-  <author initials="J. F." surname="Reschke" fullname="Julian F. Reschke" role="Editor">
+  <author initials="J. F." surname="Reschke" fullname="Julian F. Reschke" role="editor">
     <organization abbrev="greenbytes">greenbytes GmbH</organization>
     <address>
       <email>julian.reschke@greenbytes.de</email>	
@@ -142,8 +142,19 @@ Intermediaries:
 <t>Can meet regulatory requirements as they may prevail in particular jurisdictions through an approach which is more open and transparent to both users and content providers, and which may be in the national interest.</t>
 </list>
 </t>
-
 </section>
+
+<section title="Analysis of related work">
+<t>
+  The concept of object security is not something new, several approaches targeted at different application areas exist today.
+</t>
+<section title="JOSE">
+<t>
+  JOSE stands for "JSON Object Signing and Encryption". It is a series of standards produced by the IETF under the JOSE charter (<eref target="https://datatracker.ietf.org/wg/jose/charter/"/>).
+</t>
+</section>
+</section>
+
   </middle>
   <back>
 

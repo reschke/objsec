@@ -51,6 +51,8 @@ Table of Contents
    1.  Introduction
    2.  Benefits for the content provider, for the users, for the
        intermediaries
+   3.  Analysis of related work
+     3.1.  JOSE
 
 1.  Introduction
 
@@ -177,6 +179,17 @@ Table of Contents
       jurisdictions through an approach which is more open and
       transparent to both users and content providers, and which may be
       in the national interest.
+
+3.  Analysis of related work
+
+   The concept of object security is not something new, several
+   approaches targeted at different application areas exist today.
+
+3.1.  JOSE
+
+   JOSE stands for "JSON Object Signing and Encryption".  It is a series
+   of standards produced by the IETF under the JOSE charter
+   (<https://datatracker.ietf.org/wg/jose/charter/>).
 
 Authors' Addresses
 
