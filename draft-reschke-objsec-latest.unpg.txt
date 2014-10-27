@@ -1,0 +1,193 @@
+
+
+
+Network Working Group                                           D. Lopez
+Internet-Draft                                            Telefonica I+D
+Intended status: Standards Track                         J. Reschke, Ed.
+Expires: April 30, 2015                                       greenbytes
+                                                        October 27, 2014
+
+
+                         Object-Level Security
+                      draft-reschke-objsec-latest
+
+Abstract
+
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at http://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on April 30, 2015.
+
+Copyright Notice
+
+   Copyright (c) 2014 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents
+   (http://trustee.ietf.org/license-info) in effect on the date of
+   publication of this document.  Please review these documents
+   carefully, as they describe your rights and restrictions with respect
+   to this document.  Code Components extracted from this document must
+   include Simplified BSD License text as described in Section 4.e of
+   the Trust Legal Provisions and are provided without warranty as
+   described in the Simplified BSD License.
+
+Table of Contents
+
+   1.  Introduction
+   2.  Benefits for the content provider, for the users, for the
+       intermediaries
+
+1.  Introduction
+
+   In the last decade, the generalization of network access, the cloud
+   and the ubiquity of the web as an application platform has translated
+   into an unprecedented increase in the use of the Internet,
+   facilitated by the development of new web standards and the
+   innovations in mobile technologies.  With this growth in use, there
+   has been an increased amount of personal data being sent over multi
+   hop public links.
+
+   In order to protect the integrity and confidentiality of the online
+   transactions, http traffic can be secured with transport layer
+   security using https.  While https is great for e-commerce and
+   banking and while there is a sense of understanding in the user
+   community around the secure nature of https, using TLS and https for
+   the majority of the traffic has performance and functional drawbacks,
+   mainly because the http session is encrypted as a whole.
+
+   Looking from the privacy and security perspective, it is clear that
+   users must be aware if and when an intermediary node is intercepting
+   their traffic and they have the right to continue or demand higher
+   levels of privacy by encrypting what they deem to be sensitive
+   information.  The privacy threshold depends on user's tolerance and
+   the trust they put in the intermediary's reputation.
+
+   Modern web architecture involves sophisticated caching schemes that
+   involve fetching various objects (images, libraries, etc.) from
+   various locations in the path to avoid latency and improve the
+   overall user experience while reducing bandwidth use.  This is an
+   important aspect especially in the developing countries, remote
+   locations and in general areas that lack fast network infrastructure.
+
+   The ability to atomically encrypt objects or even http frames should
+   support this sophisticated caching mechanisms while allowing content
+   providers to avoid distributing their server key material across the
+   network nodes and prevent the risk of compromising their security.
+
+2.  Benefits for the content provider, for the users, for the
+    intermediaries
+
+   An object security approach will allow the different parties to
+   establis end-to-end and hop-by-hop security mechanisms to different
+   data and metadata elements, and therefore address what can be seen as
+   conflicting requirements in terms of optimization and security
+   capabilitites.
+
+   The following benefits will arise for the different stakeholders:
+
+   Content providers:
+
+   o  Can select the type of security service that is optimal and
+      sufficient for particular types of content: e.g. confidentiality,
+      integrity protection, entity authentication etc.
+
+   o  Can select which parts of their content shall be secured or not
+      and how content shall be securely retrievable.
+
+   o  Can increase their confidence in secure temporary content storage
+      during delivery through encrypting/signing sensitive content
+      objects.
+
+   o  Can leverage the business services of 3rd parties (intermediaries)
+      through enabling the intermediaries to perform value-added
+      services.  Content providers may outsource particular tasks (like
+      caching, or offering higher security level to users) to
+      intermediaries.
+
+   o  When using the services of content delivery networks can benefit
+      from faster, optimised delivery over the "last mile" (as seen from
+      the perspective of a content delivery network).  Content delivery
+      networks can optimise delivery on behalf of content providers over
+      the first and middle mile, however they often rely on other ISPs
+      and mobile network operators to deliver content over the last
+      mile.  Intermediaries in the last mile can optimise traffic
+      engineering.
+
+   Users:
+
+   o  Are able to enjoy sufficient privacy and security as dictated by
+      different use cases and equally their personal preferences (e.g.
+      protection from traffic analysis, integrity of content).
+
+   o  Can benefit from value-added services delivered by intermediaries
+      on behalf of content providers.
+
+   o  Can have access to services offered by intermediaries which
+      enhance end user quality of experience (e.g. malware detection,
+      parental controls).
+
+   o  Can access web resources and services with lower latency and
+      better response times (e.g. through intermediaries performing
+      video pacing or traffic engineering to avoid congestion on
+      particular networks).
+
+   Intermediaries:
+
+   o  Can play their specific roles in content delivery and
+      communication on behalf of content providers, like
+
+      *  Caching of content on behalf of content providers
+
+      *  Optimisation of content for optimal delivery on behalf of
+         content providers
+
+      *  Video pacing on behalf of content providers.
+
+   o  Can provide value-added services on behalf of users like URL
+      filtering , parental control, malware detection etc.
+
+   o  Can optimise content delivery and data communication within a
+      network they are associated with or control e.g. through traffic
+      engineering and traffic management by taking into account the
+      inherent needs of content types and the explicit real- and non-
+      real-time requirements of content providers and content delivery
+      networks.  Thereby, intermediaries contribute to an improved "end-
+      to-end" user experience in the interest of both users and content
+      providers.
+
+      *  Intermediaries are enabled to perform congestion management and
+         can therefore reduce latency and response times.
+
+   o  Can meet regulatory requirements as they may prevail in particular
+      jurisdictions through an approach which is more open and
+      transparent to both users and content providers, and which may be
+      in the national interest.
+
+Authors' Addresses
+
+   Diego R. Lopez
+   Telefonica I+D
+
+   EMail: diego.r.lopez@telefonica.com
+
+
+   Julian F. Reschke (editor)
+   greenbytes GmbH
+
+   EMail: julian.reschke@greenbytes.de
+
