@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
+<?rfc toc="yes"?>
+<?rfc symrefs="yes"?>
+<?rfc sortrefs="yes"?>
+<?rfc compact="yes"?>
+<?rfc comments="yes"?>
+<?rfc inline="yes"?>
+<?rfc subcompact="no"?>
+<?rfc rfcedstyle="yes"?>
+<?rfc-ext allow-markup-in-artwork="yes" ?>
+<!--<?rfc-ext refresh-from="draft-reschke-http-jfv-latest.xml" ?>-->
+
+<!DOCTYPE rfc [
+  <!ENTITY mdash "&#8212;">
+  <!ENTITY Note "<x:h xmlns:x='http://purl.org/net/xml2rfc/ext'>Note:</x:h>">
+  <!ENTITY MAY "<bcp14 xmlns='http://purl.org/net/xml2rfc/ext'>MAY</bcp14>">
+  <!ENTITY MUST "<bcp14 xmlns='http://purl.org/net/xml2rfc/ext'>MUST</bcp14>">
+  <!ENTITY MUST-NOT "<bcp14 xmlns='http://purl.org/net/xml2rfc/ext'>MUST NOT</bcp14>">
+  <!ENTITY OPTIONAL "<bcp14 xmlns='http://purl.org/net/xml2rfc/ext'>OPTIONAL</bcp14>">
+  <!ENTITY RECOMMENDED "<bcp14 xmlns='http://purl.org/net/xml2rfc/ext'>RECOMMENDED</bcp14>">
+  <!ENTITY REQUIRED "<bcp14 xmlns='http://purl.org/net/xml2rfc/ext'>REQUIRED</bcp14>">
+  <!ENTITY SHALL "<bcp14 xmlns='http://purl.org/net/xml2rfc/ext'>SHALL</bcp14>">
+  <!ENTITY SHALL-NOT "<bcp14 xmlns='http://purl.org/net/xml2rfc/ext'>SHALL NOT</bcp14>">
+  <!ENTITY SHOULD "<bcp14 xmlns='http://purl.org/net/xml2rfc/ext'>SHOULD</bcp14>">
+  <!ENTITY SHOULD-NOT "<bcp14 xmlns='http://purl.org/net/xml2rfc/ext'>SHOULD NOT</bcp14>">
+]>
+<rfc xmlns:x="http://purl.org/net/xml2rfc/ext" xmlns:ed="http://greenbytes.de/2002/rfcedit" ipr="trust200902" docName="draft-reschke-objsec-latest" category="std" xml:lang="en" x:maturity-level="informational">
+
+  <!--<x:feedback template="mailto:ietf-http-wg@w3.org?subject={docname},%20%22{section}%22&amp;body=&lt;{ref}&gt;:"/>-->
+
+	<front>
+  <title>Object-Level Security</title>
+  <author initials="D. R." surname="Lopez" fullname="Diego R. Lopez">
+    <organization>Telefonica I+D</organization>
+    <address>
+      <email>diego.r.lopez@telefonica.com</email>	
+    </address>
+  </author>
+  <author initials="J. F." surname="Reschke" fullname="Julian F. Reschke" role="Editor">
+    <organization abbrev="greenbytes">greenbytes GmbH</organization>
+    <address>
+      <email>julian.reschke@greenbytes.de</email>	
+    </address>
+  </author>
+
+  <date year="2014"/>
+  
+  <abstract>
+    <t>
+    </t>
+  </abstract>
+
+  </front>
+
+  <middle>
+
+<section title="Introduction" anchor="introduction">
+<t>
+  In the last decade, the generalization of network access, the cloud and
+  the ubiquity of the web as an application platform has translated into an
+  unprecedented increase in the use of the Internet, facilitated by the
+  development of new web standards and the innovations in mobile technologies.
+  With this growth in use, there has been an increased amount of personal data
+  being sent over multi hop public links.
+</t>
+<t>
+  In order to protect the integrity and confidentiality of the online
+  transactions, http traffic can be secured with transport layer security
+  using https. While https is great for e-commerce and banking and while there
+  is a sense of understanding in the user community around the secure nature of
+  https, using TLS and https for the majority of the traffic has performance
+  and functional drawbacks, mainly because the http session is encrypted as a whole.
+</t>
+<t>
+  Looking from the privacy and security perspective, it is clear that users
+  must be aware if and when an intermediary node is intercepting their traffic
+  and they have the right to continue or demand higher levels of privacy by
+  encrypting what they deem to be sensitive information. The privacy threshold
+  depends on user's tolerance and the trust they put in the intermediary's reputation.
+</t>
+<t> 
+  Modern web architecture involves sophisticated caching schemes that involve
+  fetching various objects (images, libraries, etc.) from various locations
+  in the path to avoid latency and improve the overall user experience while
+  reducing bandwidth use. This is an important aspect especially in the
+  developing countries, remote locations and in general areas that lack fast
+  network infrastructure.
+</t>
+<t> 
+  The ability to atomically encrypt objects or even http frames should support
+  this sophisticated caching mechanisms while allowing content providers to
+  avoid distributing their server key material across the network nodes and
+  prevent the risk of compromising their security.
+</t>
+</section>
+
+<section title="Benefits for the content provider, for the users, for the intermediaries">
+<t>
+  An object security approach will allow the different parties to establis
+  end-to-end and hop-by-hop security mechanisms to different data and metadata
+  elements, and therefore address what can be seen as conflicting requirements
+  in terms of optimization and security capabilitites.
+</t>
+<t>  
+The following benefits will arise for the different stakeholders:
+</t>
+<t>
+Content providers:
+<list style="symbols">
+<t>Can select the type of security service that is optimal and sufficient for particular types of content: e.g. confidentiality, integrity protection, entity authentication etc.</t> 
+<t>Can select which parts of their content shall be secured or not and how content shall be securely retrievable.</t>
+<t>Can increase their confidence in secure temporary content storage during delivery through encrypting/signing sensitive content objects.</t>
+<t>Can leverage the business services of 3rd parties (intermediaries) through enabling the intermediaries to perform value-added services. Content providers may outsource particular tasks (like caching, or offering higher security level to users) to intermediaries.</t>
+<t>When using the services of content delivery networks can benefit from faster, optimised delivery over the "last mile" (as seen from the perspective of a content delivery network). Content delivery networks can optimise delivery on behalf of content providers over the first and middle mile, however they often rely on other ISPs and mobile network operators to deliver content over the last mile. Intermediaries in the last mile can optimise traffic engineering.</t>
+</list>
+</t>
+<t>
+Users:
+<list style="symbols">
+<t>Are able to enjoy sufficient privacy and security as dictated by different use cases and equally their personal preferences (e.g. protection from traffic analysis, integrity of content).</t>
+<t>Can benefit from value-added services delivered by intermediaries on behalf of content providers.</t>
+<t>Can have access to services offered by intermediaries which enhance end user quality of experience (e.g. malware detection, parental controls).</t>
+<t>Can access web resources and services with lower latency and better response times (e.g. through intermediaries performing video pacing or traffic engineering to avoid congestion on particular networks).</t>
+</list>
+</t>
+<t>
+Intermediaries:
+<list style="symbols">
+<t>Can play their specific roles in content delivery and communication on behalf of content providers, like 
+<list style="symbols">
+<t>Caching of content on behalf of content providers</t>
+<t>Optimisation of content for optimal delivery on behalf of content providers</t>
+<t>Video pacing on behalf of content providers.</t>
+</list>
+</t>
+<t>Can provide value-added services on behalf of users like URL filtering , parental control, malware detection etc.</t>
+<t>Can optimise content delivery and data communication within a network they are associated with or control e.g. through traffic engineering and traffic management by taking into account the inherent needs of content types and the explicit real- and non-real-time requirements of content providers and content delivery networks. Thereby, intermediaries contribute to an improved "end-to-end" user experience in the interest of both users and content providers.
+<list style="symbols">
+<t>Intermediaries are enabled to perform congestion management and can therefore reduce latency and response times.</t>
+</list></t>
+<t>Can meet regulatory requirements as they may prevail in particular jurisdictions through an approach which is more open and transparent to both users and content providers, and which may be in the national interest.</t>
+</list>
+</t>
+
+</section>
+  </middle>
+  <back>
+
+  </back>
+
+</rfc>
