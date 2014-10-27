@@ -61,8 +61,9 @@ Table of Contents
    3.  Characteristics of Solutions
    4.  Benefits for the content provider, for the users, for the
        intermediaries
-   5.  Analysis of related work
+   5.  Analysis of Related Work
      5.1.  JOSE
+   6.  Informative References
 
 1.  Introduction
 
@@ -275,7 +276,7 @@ Table of Contents
       caching, or offering higher security level to users) to
       intermediaries.
 
-   o  When using the services of content delivery networks can benefit
+   o  When using the services of content delivery networks, can benefit
       from faster, optimised delivery over the "last mile" (as seen from
       the perspective of a content delivery network).  Content delivery
       networks can optimise delivery on behalf of content providers over
@@ -314,8 +315,8 @@ Table of Contents
 
       *  Video pacing on behalf of content providers.
 
-   o  Can provide value-added services on behalf of users like URL
-      filtering , parental control, malware detection etc.
+   o  Can provide value-added services on behalf of users like parental
+      control, malware detection etc.
 
    o  Can optimise content delivery and data communication within a
       network they are associated with or control e.g. through traffic
@@ -334,7 +335,7 @@ Table of Contents
       transparent to both users and content providers, and which may be
       in the national interest.
 
-5.  Analysis of related work
+5.  Analysis of Related Work
 
    The concept of object security is not something new, several
    approaches targeted at different application areas exist today.
@@ -344,6 +345,53 @@ Table of Contents
    JOSE stands for "JSON Object Signing and Encryption".  It is a series
    of standards produced by the IETF under the JOSE charter
    (<https://datatracker.ietf.org/wg/jose/charter/>).
+
+   JOSE offers encryption, digital signatures, and Message
+   Authentication Codes (MACs).  Thus, it appears to support the
+   following cryptographic services:
+
+   o  Confidentiality (via encryption)
+
+   o  Data integrity (via message authentication codes)
+
+   o  Data origin authentication (via message authentication codes)
+
+   o  Non-repudiation (via digital signatures)
+
+   o  Entity authentication (in combination with the possible use of
+      public-key certificates).
+
+   Note that in JOSE, many things are described using JSON notation,
+   e.g. for defining details of cryptographic keys or for defining the
+   structure of a protected content object.
+
+   The JSON Web Encryption ([JWE]) spec states:
+
+   JSON Web Encryption represents encrypted content using JavaScript
+   Object Notation (JSON) based data structures.  The JWE cryptographic
+   mechanisms encrypt and provide integrity protection for an arbitrary
+   sequence of octets Although encrypted content can be represented as a
+   JSON data structure, the data to protect can be an "arbitrary
+   sequence of octets".
+
+   JWE is thus a data structure representing an encrypted and integrity
+   protected message.  This data structure can be the body of an HTTP
+   response message.
+
+   JWE supports per default combined encryption and data origin
+   authentication through Authenticated Encryption with Associated Data
+   (AEAD).  This is comparable to authenticated encryption in
+   Cryptographic Message Syntax (CMS) ([RFC5083]).
+
+6.  Informative References
+
+   [JWE]      Jones, M. and J. Hildebrand, "JSON Web Encryption (JWE)",
+              draft-ietf-jose-json-web-encryption-36 (work in progress),
+              October 2014.
+
+   [RFC5083]  Housley, R., "Cryptographic Message Syntax (CMS)
+              Authenticated-Enveloped-Data Content Type", RFC 5083,
+              November 2007.
 
 Authors' Addresses
 

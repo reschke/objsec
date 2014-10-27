@@ -251,7 +251,7 @@ Content providers:
 <t>Can select which parts of their content shall be secured or not and how content shall be securely retrievable.</t>
 <t>Can increase their confidence in secure temporary content storage during delivery through encrypting/signing sensitive content objects.</t>
 <t>Can leverage the business services of 3rd parties (intermediaries) through enabling the intermediaries to perform value-added services. Content providers may outsource particular tasks (like caching, or offering higher security level to users) to intermediaries.</t>
-<t>When using the services of content delivery networks can benefit from faster, optimised delivery over the "last mile" (as seen from the perspective of a content delivery network). Content delivery networks can optimise delivery on behalf of content providers over the first and middle mile, however they often rely on other ISPs and mobile network operators to deliver content over the last mile. Intermediaries in the last mile can optimise traffic engineering.</t>
+<t>When using the services of content delivery networks, can benefit from faster, optimised delivery over the "last mile" (as seen from the perspective of a content delivery network). Content delivery networks can optimise delivery on behalf of content providers over the first and middle mile, however they often rely on other ISPs and mobile network operators to deliver content over the last mile. Intermediaries in the last mile can optimise traffic engineering.</t>
 </list>
 </t>
 <t>
@@ -273,7 +273,7 @@ Intermediaries:
 <t>Video pacing on behalf of content providers.</t>
 </list>
 </t>
-<t>Can provide value-added services on behalf of users like URL filtering , parental control, malware detection etc.</t>
+<t>Can provide value-added services on behalf of users like parental control, malware detection etc.</t>
 <t>Can optimise content delivery and data communication within a network they are associated with or control e.g. through traffic engineering and traffic management by taking into account the inherent needs of content types and the explicit real- and non-real-time requirements of content providers and content delivery networks. Thereby, intermediaries contribute to an improved "end-to-end" user experience in the interest of both users and content providers.
 <list style="symbols">
 <t>Intermediaries are enabled to perform congestion management and can therefore reduce latency and response times.</t>
@@ -283,7 +283,7 @@ Intermediaries:
 </t>
 </section>
 
-<section title="Analysis of related work">
+<section title="Analysis of Related Work">
 <t>
   The concept of object security is not something new, several approaches targeted at different application areas exist today.
 </t>
@@ -291,12 +291,68 @@ Intermediaries:
 <t>
   JOSE stands for "JSON Object Signing and Encryption". It is a series of standards produced by the IETF under the JOSE charter (<eref target="https://datatracker.ietf.org/wg/jose/charter/"/>).
 </t>
+<t>
+  JOSE offers encryption, digital signatures, and Message Authentication Codes (MACs). Thus, it appears to support the following cryptographic services:
+  <list style="symbols">
+      <t>Confidentiality (via encryption)</t>
+      <t>Data integrity (via message authentication codes)</t>
+      <t>Data origin authentication (via message authentication codes)</t>
+      <t>Non-repudiation (via digital signatures)</t>
+      <t>Entity authentication (in combination with the possible use of public-key certificates).</t>
+  </list>
+</t>
+<t>
+  Note that in JOSE, many things are described using JSON notation, e.g. for
+  defining details of cryptographic keys or for defining the structure of a protected content object.
+</t>
+<t>
+  The JSON Web Encryption (<xref target="JWE"/>) spec states:
+</t>
+<t>
+  JSON Web Encryption represents encrypted content using JavaScript Object
+  Notation (JSON) based data structures. The JWE cryptographic mechanisms
+  encrypt and provide integrity protection for an arbitrary sequence of octets
+  Although encrypted content can be represented as a JSON data structure, the
+  data to protect can be an "arbitrary sequence of octets".
+</t>
+<t>
+  JWE is thus a data structure representing an encrypted and integrity
+  protected message. This data structure can be the body of an HTTP response
+  message.
+</t>
+<t>
+  JWE supports per default combined encryption and data origin authentication
+  through Authenticated Encryption with Associated Data (AEAD). This is
+  comparable to authenticated encryption in Cryptographic Message Syntax (CMS)
+  (<xref target="RFC5083"/>).
+</t>
+
 </section>
 </section>
+
 
   </middle>
   <back>
-
+    <references title="Informative References">
+      <reference anchor="RFC5083">
+        <front>
+          <title>Cryptographic Message Syntax (CMS) Authenticated-Enveloped-Data Content Type</title>
+          <author initials="R." surname="Housley" fullname="R. Housley"/>
+          <date year="2007" month="November"/>
+        </front>
+        <seriesInfo name="RFC" value="5083"/>
+      </reference>
+      <reference anchor="JWE">
+        <front>
+        <title>JSON Web Encryption (JWE)</title>
+          <author initials="M." surname="Jones" fullname="Michael Jones"/>
+          <author initials="J." surname="Hildebrand" fullname="Joe Hildebrand"/>
+          <date month="October" day="24" year="2014"/>
+        </front>
+        <seriesInfo name="Internet-Draft" value="draft-ietf-jose-json-web-encryption-36"/>
+      </reference>
+    </references>
+  
   </back>
 
 </rfc>
