@@ -202,6 +202,37 @@
 </t>
 </section>
 
+<section title="Characteristics of Solutions">
+<t>
+  From above, one can draw some conclusions about the characteristics possible
+  solutions or new protocols may have to show. Below is a non-exhaustive list.
+  A new fine-grained intermediary-aware end-to-end protocol may need to feature:
+</t> 
+<t>
+  <list style="numbers">
+<t>a mechanism to enable users to choose their preferred level of privacy, adequate for a particular context and use case. The context may be determined by the presence or absence of particular intermediaries or proxies which offer particular services (e.g. caching, data compression etc.).</t>
+<t>mechanisms that enable certain communication data to be exchanged securely, whereby the end user shall be able to select the set of security services deemed adequate for a particular communication context (e.g. confidentiality, data integrity, entity authentication etc.).</t>
+<t>mechanisms that enable the end user to select which communication data shall be subject to particular security services (like confidentiality, data integrity etc.). Note that this might be all application level data transferred between server and client, or it might be a subset of application level data.
+This refers to the notion of "fine-grained" control.</t>
+<t>mechanisms that protect against passive interception and man-in-the-middle attacks.</t>
+<t>mechanisms that allow the two ultimate communication end points, namely client and origin server, to negotiate whether and if so which intermediaries shall be permitted to play a role in delivering application data from origin server to client given particular end user expectations, requirements and preferences, and information about the status of the network between client and server. This refers to the notion of "intermediary-aware end-to-end protocol".</t>
+<t>mechanisms that allow end users or origin server or both to determine in real-time which traffic optimizations are available at the time of communication setup.</t>
+<t>mechanisms that allow end users or origin servers or both to eventually select zero or more optimizations to be applied to traffic flows between origin server and client.</t>
+<t>mechanisms that allow the simultaneous or sequential application of optimizations such that those optimizations on traffic and traffic flow don't conflict with each other.</t>
+  </list>
+</t>
+<t>
+  As said, above list is not exhaustive and additional characteristics may be
+  either required or useful.
+</t>
+<t>
+  The intent of this draft is not to introduce a solution yet. However, it may
+  help to consider possible elements which might play a role in any solution.
+  One element is "object security". 
+</t>
+</section>
+
+
 
 <section title="Benefits for the content provider, for the users, for the intermediaries">
 <t>

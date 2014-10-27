@@ -58,10 +58,11 @@ Table of Contents
 
    1.  Introduction
    2.  Objectives
-   3.  Benefits for the content provider, for the users, for the
+   3.  Characteristics of Solutions
+   4.  Benefits for the content provider, for the users, for the
        intermediaries
-   4.  Analysis of related work
-     4.1.  JOSE
+   5.  Analysis of related work
+     5.1.  JOSE
 
 1.  Introduction
 
@@ -187,7 +188,64 @@ Table of Contents
    leverage the services of 3rd party intermediaries located between
    client and origin server.
 
-3.  Benefits for the content provider, for the users, for the
+3.  Characteristics of Solutions
+
+   From above, one can draw some conclusions about the characteristics
+   possible solutions or new protocols may have to show.  Below is a
+   non-exhaustive list.  A new fine-grained intermediary-aware end-to-
+   end protocol may need to feature:
+
+   1.  a mechanism to enable users to choose their preferred level of
+       privacy, adequate for a particular context and use case.  The
+       context may be determined by the presence or absence of
+       particular intermediaries or proxies which offer particular
+       services (e.g. caching, data compression etc.).
+
+   2.  mechanisms that enable certain communication data to be exchanged
+       securely, whereby the end user shall be able to select the set of
+       security services deemed adequate for a particular communication
+       context (e.g. confidentiality, data integrity, entity
+       authentication etc.).
+
+   3.  mechanisms that enable the end user to select which communication
+       data shall be subject to particular security services (like
+       confidentiality, data integrity etc.).  Note that this might be
+       all application level data transferred between server and client,
+       or it might be a subset of application level data.  This refers
+       to the notion of "fine-grained" control.
+
+   4.  mechanisms that protect against passive interception and man-in-
+       the-middle attacks.
+
+   5.  mechanisms that allow the two ultimate communication end points,
+       namely client and origin server, to negotiate whether and if so
+       which intermediaries shall be permitted to play a role in
+       delivering application data from origin server to client given
+       particular end user expectations, requirements and preferences,
+       and information about the status of the network between client
+       and server.  This refers to the notion of "intermediary-aware
+       end-to-end protocol".
+
+   6.  mechanisms that allow end users or origin server or both to
+       determine in real-time which traffic optimizations are available
+       at the time of communication setup.
+
+   7.  mechanisms that allow end users or origin servers or both to
+       eventually select zero or more optimizations to be applied to
+       traffic flows between origin server and client.
+
+   8.  mechanisms that allow the simultaneous or sequential application
+       of optimizations such that those optimizations on traffic and
+       traffic flow don't conflict with each other.
+
+   As said, above list is not exhaustive and additional characteristics
+   may be either required or useful.
+
+   The intent of this draft is not to introduce a solution yet.
+   However, it may help to consider possible elements which might play a
+   role in any solution.  One element is "object security".
+
+4.  Benefits for the content provider, for the users, for the
     intermediaries
 
    An object security approach will allow the different parties to
@@ -276,12 +334,12 @@ Table of Contents
       transparent to both users and content providers, and which may be
       in the national interest.
 
-4.  Analysis of related work
+5.  Analysis of related work
 
    The concept of object security is not something new, several
    approaches targeted at different application areas exist today.
 
-4.1.  JOSE
+5.1.  JOSE
 
    JOSE stands for "JSON Object Signing and Encryption".  It is a series
    of standards produced by the IETF under the JOSE charter
