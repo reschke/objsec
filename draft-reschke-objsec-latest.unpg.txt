@@ -57,10 +57,11 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction
-   2.  Benefits for the content provider, for the users, for the
+   2.  Objectives
+   3.  Benefits for the content provider, for the users, for the
        intermediaries
-   3.  Analysis of related work
-     3.1.  JOSE
+   4.  Analysis of related work
+     4.1.  JOSE
 
 1.  Introduction
 
@@ -160,7 +161,33 @@ Table of Contents
    providers to avoid distributing their server key material across the
    network nodes and prevent the risk of compromising their security.
 
-2.  Benefits for the content provider, for the users, for the
+2.  Objectives
+
+   Given the short description of the problem above, the following
+   objectives can be derived.
+
+   1.  To improve security and user-controlled privacy.
+
+   2.  To minimize passive interception and man in the middle attacks.
+
+   3.  To allow the client (user) and the server (content provider) to
+       negotiate what and whom they want to give (or not) visibility
+       into their traffic flows.
+
+   4.  To enable multiple levels of optimization that don't conflict
+       with each other and either meet all parties expectations or
+       maximise the benefit to as many involved parties as possible.
+
+   In a world of TLS and https only, it is difficult to achieve in
+   particular objectives 3. and 4.
+
+   The challenge therefore is in finding mechanisms or protocols which
+   meet objectives 1. and 2. (e.g. in the way TLS is delivering against
+   those objectives) AND simultaneously provide the added flexibility to
+   leverage the services of 3rd party intermediaries located between
+   client and origin server.
+
+3.  Benefits for the content provider, for the users, for the
     intermediaries
 
    An object security approach will allow the different parties to
@@ -249,12 +276,12 @@ Table of Contents
       transparent to both users and content providers, and which may be
       in the national interest.
 
-3.  Analysis of related work
+4.  Analysis of related work
 
    The concept of object security is not something new, several
    approaches targeted at different application areas exist today.
 
-3.1.  JOSE
+4.1.  JOSE
 
    JOSE stands for "JSON Object Signing and Encryption".  It is a series
    of standards produced by the IETF under the JOSE charter
