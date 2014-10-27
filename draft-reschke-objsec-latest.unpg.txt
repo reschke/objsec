@@ -383,6 +383,65 @@ Table of Contents
    (AEAD).  This is comparable to authenticated encryption in
    Cryptographic Message Syntax (CMS) ([RFC5083]).
 
+   A secure object (JWE object) includes as its components:
+
+   1.  JOSE Header: a JSON object that contains the parameters
+       describing the cryptographic operations and parameters used.
+       This header includes 3 sub-headers: Protected Header, Shared
+       Unprotected Header, and Per-Recipient Unprotected Header.
+
+   2.  JWE Encrypted Key: this is the encrypted Content Encryption Key.
+
+   3.  JWE AAD: Additional value to be integrity protected (additional
+       authenticated data).
+
+   4.  JWE Initialization Vector: used with the encryption of the
+       plaintext.
+
+   5.  JWE Ciphertext: resulting from encryption of the plaintext with
+       additional authenticated data.
+
+   6.  JWE Authentication Tag: resulting from authenticated encryption.
+
+   In the case of JWE JSON Serialization above object is finally
+   represented as six base64url encoded strings and two unprotected JSON
+   object values, all being represented as members within a JSON object.
+
+   JWE also supports data compression before encryption.  In preparation
+   for encryption the (possibly compressed) plaintext must be serialized
+   into an octet sequence.
+
+   Similar to Cryptographic Message Syntax (CMS), JWE supports a number
+   of key management modes.  These are methods for the receiver to
+   determine the Content Encryption Key (CEK).  To illustrates such
+   methods for JWE:
+
+   1.  Key Encryption: the CEK is encrypted to the receiver using the
+       public key of the receiver.
+
+   2.  Key Wrapping: the CEK is encrypted to the receiver using a
+       symmetric key.
+
+   3.  Direct Key Agreement: a key agreement algorithm is used to
+       jointly agree on a CEK.
+
+   4.  Key Agreement with Key Wrapping: both parties agree on a
+       symmetric key which the sender in turn then uses to encrypt the
+       CEK to the receiver.
+
+   5.  Direct Encryption: the symmetric CEK is already shared by both
+       parties and available to them.
+
+   JOSE protected payload can be any content, and need not be a
+   representation of a JSON object.
+
+   The JWE specification gives an example in Appendix A where a plain
+   text string is turned into an octet sequence which is encrypted and
+   encoded in the BASE64URL format ([JWE]).
+
+   [[anchor6: The question then remains: How to serialize various kinds
+   of content into an octet sequence?]]
+
 6.  Informative References
 
    [JWE]      Jones, M. and J. Hildebrand, "JSON Web Encryption (JWE)",
