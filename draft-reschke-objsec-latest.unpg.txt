@@ -21,6 +21,37 @@ Expires: April 30, 2015                                   Alcatel-Lucent
 
 Abstract
 
+   A tremendous growth in different uses of the Internet has led to a
+   growing need to protect data sent over public networks, including
+   data sent via HTTP.  Resorting to the use of end-to-end TLS and https
+   for the majority of traffic looks at first like a most feasible
+   response.  However, the more sophisticated the web architecture
+   becomes as it goes beyond the simple client-server model, the more
+   the end-to-end use of TLS shows its downside as it excludes the use
+   of beneficial intermediaries like caches or proxies that provide
+   instrumental services.  The need for greater privacy seems to collide
+   with the equally growing desire for better end-to-end performance and
+   user experience.  As an example, the use of TLS and https often
+   appears to maximise the benefit for the first but not the benefit for
+   the combination of both.
+
+   This document describes this dilemma and lays out a number of
+   objectives of what should ideally be achieved, namely catering for
+   sufficient security and privacy whilst providing users with the
+   opportunity to make use of intermediaries' services where considered
+   beneficial.  We then introduce a number of characteristics potential
+   solutions could have, with the hope that those will steer us towards
+   suitable protocol mechanisms and data formats.  End-to-end protocols
+   which are aware of intermediaries should enable users and/or content
+   providers to exercise fine-grained control over what intermediaries
+   shall be able to do and what exposure to data or metadata they shall
+   be permitted to get.  The document then highlights anticipated
+   benefits to key stakeholders like users, content providers and
+   intermediaries.  As elements like object security can play a useful
+   role, we encourage the analysis of related pieces of work in order to
+   discern their applicability, limitations, and coverage of use cases.
+   This will allow us to frame an overall architecture and motivate more
+   detailed work on protocols and mechanisms in the future.
 
 Status of This Memo
 
@@ -63,7 +94,7 @@ Table of Contents
        intermediaries
    5.  Analysis of Related Work
    6.  Architectural Considerations
-   7.  Analysis of the Impacts on HTTP2
+   7.  Analysis of the Impacts on HTTP/2
    8.  Analysis of the Impacts on TLS
    9.  Impacts on the current browser architecture
    10. Impacts on the existing deployment / how to make this
@@ -84,12 +115,12 @@ Table of Contents
    hop public links.
 
    In order to protect the integrity and confidentiality of the online
-   transactions, http traffic can be secured with transport layer
+   transactions, HTTP traffic can be secured with transport layer
    security using https.  While https is great for e-commerce and
    banking and while there is a sense of understanding in the user
    community around the secure nature of https, using TLS and https for
    the majority of the traffic has performance and functional drawbacks,
-   mainly because the http session is encrypted as a whole.
+   mainly because the HTTP session is encrypted as a whole.
 
    Looking from the privacy and security perspective, it is clear that
    users must be aware if and when an intermediary node is intercepting
@@ -166,7 +197,7 @@ Table of Contents
    benefits could be imagined which leads to satisfying the justified
    needs of multiple stakeholders:
 
-   The ability to atomically encrypt objects or even http frames should
+   The ability to atomically encrypt objects or even HTTP frames should
    support this sophisticated caching mechanisms while allowing content
    providers to avoid distributing their server key material across the
    network nodes and prevent the risk of compromising their security.
@@ -385,7 +416,7 @@ Table of Contents
    security architecture should be designed at the application layer or
    further down the stack as an alternative to TLS.
 
-7.  Analysis of the Impacts on HTTP2
+7.  Analysis of the Impacts on HTTP/2
 
    [[anchor7: TBD]]
 
