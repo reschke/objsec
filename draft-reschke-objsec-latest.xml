@@ -81,8 +81,8 @@
 
 <section title="Introduction" anchor="introduction">
 <t>
-  In the last decade, the generalization of network access, the cloud and
-  the ubiquity of the web as an application platform has translated into an
+  In the last decade, the generalization of network access, the cloud and the
+  ubiquity of the Web as an application platform has translated into an
   unprecedented increase in the use of the Internet, facilitated by the
   development of new web standards and the innovations in mobile technologies.
   With this growth in use, there has been an increased amount of personal data
@@ -90,26 +90,91 @@
 </t>
 <t>
   In order to protect the integrity and confidentiality of the online
-  transactions, http traffic can be secured with transport layer security
-  using https. While https is great for e-commerce and banking and while there
-  is a sense of understanding in the user community around the secure nature of
+  transactions, http traffic can be secured with transport layer security using
+  https. While https is great for e-commerce and banking and while there is a
+  sense of understanding in the user community around the secure nature of
   https, using TLS and https for the majority of the traffic has performance
-  and functional drawbacks, mainly because the http session is encrypted as a whole.
+  and functional drawbacks, mainly because the http session is encrypted as a
+  whole.
 </t>
 <t>
   Looking from the privacy and security perspective, it is clear that users
   must be aware if and when an intermediary node is intercepting their traffic
   and they have the right to continue or demand higher levels of privacy by
   encrypting what they deem to be sensitive information. The privacy threshold
-  depends on user's tolerance and the trust they put in the intermediary's reputation.
+  depends on user's tolerance and the trust they put in the intermediary's
+  reputation, as well as whether the user is the ultimate consent authority
+  for a given connection: for example a parent or employer may take that role
+  for a connection used by a child or employee.
 </t>
-<t> 
+<t>
   Modern web architecture involves sophisticated caching schemes that involve
-  fetching various objects (images, libraries, etc.) from various locations
-  in the path to avoid latency and improve the overall user experience while
+  fetching various objects (images, libraries, etc.) from various locations in
+  the path to avoid latency and improve the overall user experience while
   reducing bandwidth use. This is an important aspect especially in the
   developing countries, remote locations and in general areas that lack fast
   network infrastructure.
+</t>
+<t>
+  Issues thus arise from the clash of two trends: One is towards enhanced
+  privacy calling for integrity, confidentiality and anonymity. The other one
+  is towards improved performance and lower latency, calling for caching,
+  compression, and adaptability.
+</t>
+<t>
+  This is also reflected in the views of important stakeholders. Users want to
+  make informed decisions in regards to whom they trust with their data. They
+  also want to have control over what data they share with whom.
+</t>
+<t>
+  Web site owners and content providers on the other hand are keen to get the
+  most cost efficient and reliable way to deliver information and services to
+  their users and customers, while preserving their confidentiality, protecting
+  their privacy and the integrity of their data.
+</t>
+<t>
+  As different entities seek to meet the requirements of their stakeholders,
+  they sometimes apply solutions which generate conflicts. Clients act on
+  behalf of end users and solutions may include local caches and browser
+  proxies. Servers act on behalf of content providers and solutions may include
+  the use of CDNs and reverse proxies. Intermediaries operated by communication
+  service providers and network operators act on behalf of users and/or content
+  providers and solutions include means for access network optimization and
+  content filtering.
+</t>
+<t>
+  In above context, the use of TLS and https looks like a "black and white
+  approach", or an "all or nothing" approach which doesn't lend itself to
+  resolving above-mentioned conflicts. The question arises: Can "color be added"?
+</t>
+<t>
+  TLS is a client server protocol and it serves its purpose perfectly in many
+  client-server scenarios and use cases. But then the web has evolved to become
+  a mesh. Average traffic flows now involve various intermediaries between
+  clients and servers. They add value by performing different functions
+  including multiple levels of optimization.
+</t>
+<t>
+  The application of TLS forces point-to-point flows which cuts out
+  intermediaries and can lead to significant drawbacks. It reduces e.g. the
+  optimization options which translates into increasing traffic volumes in
+  access networks, higher latency and overall decreasing quality of experience
+  for users.
+</t>
+<t>
+  It can be observed that ignoring the role of intermediaries on the Internet
+  does not necessarily make the Internet more secure. In fact, in some cases it
+  forces various parties to break the TLS promise of e2e integrity and
+  confidentiality in order to meet their legal obligations (enterprises).
+</t>
+<t>
+  We suggest the solution to the challenge lies in "adding color". An example
+  of this are fine-grained intermediary-aware end-to-end protocols. 
+</t>
+<t>
+  Assuming the existence of such a fine-grained protocol, the following
+  benefits could be imagined which leads to satisfying the justified needs
+  of multiple stakeholders:
 </t>
 <t> 
   The ability to atomically encrypt objects or even http frames should support

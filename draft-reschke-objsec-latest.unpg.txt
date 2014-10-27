@@ -65,7 +65,7 @@ Table of Contents
 1.  Introduction
 
    In the last decade, the generalization of network access, the cloud
-   and the ubiquity of the web as an application platform has translated
+   and the ubiquity of the Web as an application platform has translated
    into an unprecedented increase in the use of the Internet,
    facilitated by the development of new web standards and the
    innovations in mobile technologies.  With this growth in use, there
@@ -85,7 +85,10 @@ Table of Contents
    their traffic and they have the right to continue or demand higher
    levels of privacy by encrypting what they deem to be sensitive
    information.  The privacy threshold depends on user's tolerance and
-   the trust they put in the intermediary's reputation.
+   the trust they put in the intermediary's reputation, as well as
+   whether the user is the ultimate consent authority for a given
+   connection: for example a parent or employer may take that role for a
+   connection used by a child or employee.
 
    Modern web architecture involves sophisticated caching schemes that
    involve fetching various objects (images, libraries, etc.) from
@@ -93,6 +96,64 @@ Table of Contents
    overall user experience while reducing bandwidth use.  This is an
    important aspect especially in the developing countries, remote
    locations and in general areas that lack fast network infrastructure.
+
+   Issues thus arise from the clash of two trends: One is towards
+   enhanced privacy calling for integrity, confidentiality and
+   anonymity.  The other one is towards improved performance and lower
+   latency, calling for caching, compression, and adaptability.
+
+   This is also reflected in the views of important stakeholders.  Users
+   want to make informed decisions in regards to whom they trust with
+   their data.  They also want to have control over what data they share
+   with whom.
+
+   Web site owners and content providers on the other hand are keen to
+   get the most cost efficient and reliable way to deliver information
+   and services to their users and customers, while preserving their
+   confidentiality, protecting their privacy and the integrity of their
+   data.
+
+   As different entities seek to meet the requirements of their
+   stakeholders, they sometimes apply solutions which generate
+   conflicts.  Clients act on behalf of end users and solutions may
+   include local caches and browser proxies.  Servers act on behalf of
+   content providers and solutions may include the use of CDNs and
+   reverse proxies.  Intermediaries operated by communication service
+   providers and network operators act on behalf of users and/or content
+   providers and solutions include means for access network optimization
+   and content filtering.
+
+   In above context, the use of TLS and https looks like a "black and
+   white approach", or an "all or nothing" approach which doesn't lend
+   itself to resolving above-mentioned conflicts.  The question arises:
+   Can "color be added"?
+
+   TLS is a client server protocol and it serves its purpose perfectly
+   in many client-server scenarios and use cases.  But then the web has
+   evolved to become a mesh.  Average traffic flows now involve various
+   intermediaries between clients and servers.  They add value by
+   performing different functions including multiple levels of
+   optimization.
+
+   The application of TLS forces point-to-point flows which cuts out
+   intermediaries and can lead to significant drawbacks.  It reduces
+   e.g. the optimization options which translates into increasing
+   traffic volumes in access networks, higher latency and overall
+   decreasing quality of experience for users.
+
+   It can be observed that ignoring the role of intermediaries on the
+   Internet does not necessarily make the Internet more secure.  In
+   fact, in some cases it forces various parties to break the TLS
+   promise of e2e integrity and confidentiality in order to meet their
+   legal obligations (enterprises).
+
+   We suggest the solution to the challenge lies in "adding color".  An
+   example of this are fine-grained intermediary-aware end-to-end
+   protocols.
+
+   Assuming the existence of such a fine-grained protocol, the following
+   benefits could be imagined which leads to satisfying the justified
+   needs of multiple stakeholders:
 
    The ability to atomically encrypt objects or even http frames should
    support this sophisticated caching mechanisms while allowing content
