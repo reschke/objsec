@@ -16,7 +16,7 @@ Expires: April 30, 2015                                   Alcatel-Lucent
                                                         October 27, 2014
 
 
-  A rationale for fine-grained intermediary-aware end-to-end protocols
+  A Rationale for Fine-grained Intermediary-aware End-to-End Protocols
                       draft-reschke-objsec-latest
 
 Abstract
