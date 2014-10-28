@@ -14,10 +14,10 @@ clean:
 	rm -f $(TARGETS)
 
 %.html: %.xml $(stylesheet)
-	saxon $< $(stylesheet) > $@
+	xsltproc $(stylesheet) $< > $@
 
 %.redxml: %.xml $(reduction)
-	saxon $< $(reduction) > $@
+	xsltproc $(reduction) $< > $@
 
 %.txt: %.redxml
 	$(xml2rfc) $< $@
@@ -25,6 +25,3 @@ clean:
 %.unpg.txt: %.redxml
 	$(xml2rfc) $< $@.unpg
 	mv $@.unpg $@
-
-%.xhtml: %.xml ../../rfc2629xslt/rfc2629toXHTML.xslt
-	$(saxon) $< ../../rfc2629xslt/rfc2629toXHTML.xslt > $@
