@@ -4,7 +4,7 @@
 Network Working Group                                           D. Druta
 Internet-Draft                                                      AT&T
 Intended status: Standards Track                              T. Fossati
-Expires: May 1, 2015                                      Alcatel-Lucent
+Expires: May 2, 2015                                      Alcatel-Lucent
                                                                 M. Ihlar
                                                                 Ericsson
                                                                  G. Klas
@@ -13,7 +13,7 @@ Expires: May 1, 2015                                      Alcatel-Lucent
                                                           Telefonica I+D
                                                          J. Reschke, Ed.
                                                               greenbytes
-                                                        October 28, 2014
+                                                        October 29, 2014
 
 
   A Rationale for Fine-grained Intermediary-aware End-to-End Protocols
@@ -68,7 +68,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on May 1, 2015.
+   This Internet-Draft will expire on May 2, 2015.
 
 Copyright Notice
 
@@ -446,7 +446,7 @@ Table of Contents
    The following people are not listed as authors, but contributed
    significantly to the discussions leading to this document: Liliana
    Dinale, Vijay Gurbani, Mike Jones, Eliot Lear, Salvatore Loreto, John
-   Mattsson, Sanjay Mishram, Robert Moskowitz, Kevin Smith, Dan Wing.
+   Mattsson, Sanjay Mishra, Robert Moskowitz, Kevin Smith, Dan Wing.
 
 14.  Informative References
 
