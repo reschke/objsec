@@ -64,7 +64,7 @@
   sophisticated and as it has now gone beyond the simple client-server model,
   the end-to-end used of TLS is increasingly showing its downside.  The
   end-to-end use of TLS excludes the use of beneficial intermediaries such as
-  use of caches or proxies that provide instrumental services.  Then need for
+  use of caches or proxies that provide instrumental services.  The need for
   greater privacy seems to collide with the equally growing desire for better
   end-to-end performance and user experience.  As an example, the use of
   HTTP/TLS often appears to maximise the benefit for TLS but not the benefit
@@ -85,7 +85,7 @@
   content providers and intermediaries.  As elements such as object security
   can play a useful role, this document encourages the analysis of related work
   to discern their applicability, limitations, and coverage of use cases.  Such
-  an effort may us espouse innovation to frame an overall architecture and
+  an effort may espouse innovation to frame an overall architecture and
   motivate more detailed work on protocols and mechanisms in the future.
 </t>
 </abstract>
