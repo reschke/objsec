@@ -4,7 +4,7 @@
 Network Working Group                                           D. Druta
 Internet-Draft                                                      AT&T
 Intended status: Standards Track                              T. Fossati
-Expires: May 2, 2015                                      Alcatel-Lucent
+Expires: May 7, 2015                                      Alcatel-Lucent
                                                                 M. Ihlar
                                                                 Ericsson
                                                                  G. Klas
@@ -13,7 +13,7 @@ Expires: May 2, 2015                                      Alcatel-Lucent
                                                           Telefonica I+D
                                                          J. Reschke, Ed.
                                                               greenbytes
-                                                        October 29, 2014
+                                                        November 3, 2014
 
 
   A Rationale for Fine-grained Intermediary-aware End-to-End Protocols
@@ -53,6 +53,12 @@ Abstract
    frame an overall architecture and motivate more detailed work on
    protocols and mechanisms in the future.
 
+Editorial Note (To be removed by RFC Editor)
+
+   Discussion of this draft takes place on the IETF MCIC mailing list
+   (mcic@ietf.org), which is archived at
+   <http://www.ietf.org/mail-archive/web/mcic/current/maillist.html>.
+
 Status of This Memo
 
    This Internet-Draft is submitted in full conformance with the
@@ -68,7 +74,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on May 2, 2015.
+   This Internet-Draft will expire on May 7, 2015.
 
 Copyright Notice
 

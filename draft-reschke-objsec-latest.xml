@@ -12,7 +12,7 @@
 
 <rfc xmlns:x="http://purl.org/net/xml2rfc/ext" xmlns:ed="http://greenbytes.de/2002/rfcedit" ipr="trust200902" docName="draft-reschke-objsec-latest" category="std" xml:lang="en" x:maturity-level="informational">
 
-  <!--<x:feedback template="mailto:ietf-http-wg@w3.org?subject={docname},%20%22{section}%22&amp;body=&lt;{ref}&gt;:"/>-->
+  <x:feedback template="mailto:mcic@ietf.org?subject={docname},%20%22{section}%22&amp;body=&lt;{ref}&gt;:"/>
 
 	<front>
   <title abbrev="Fine-grained End-to-end">A Rationale for Fine-grained Intermediary-aware End-to-End Protocols</title>
@@ -89,6 +89,14 @@
   motivate more detailed work on protocols and mechanisms in the future.
 </t>
 </abstract>
+
+<note title="Editorial Note (To be removed by RFC Editor)">
+  <t>
+    Discussion of this draft takes place on the IETF MCIC 
+    mailing list (mcic@ietf.org), which is archived at
+    <eref target="http://www.ietf.org/mail-archive/web/mcic/current/maillist.html"/>.
+  </t>
+</note>
 
   </front>
 
