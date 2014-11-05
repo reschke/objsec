@@ -57,7 +57,7 @@
   
 <abstract>
 <t>
-  A tremendous growth in different uses of the Internet has let to a growing
+  A tremendous growth in different uses of the Internet has led to a growing
   need to protect data sent over public networks, including data sent via http.
   Use of end-to-end TLS for the majority of traffic looks at first a most
   feasible response. However, the web architecture has become more
@@ -67,7 +67,7 @@
   use of caches or proxies that provide instrumental services.  The need for
   greater privacy seems to collide with the equally growing desire for better
   end-to-end performance and user experience.  As an example, the use of
-  HTTP/TLS often appears to maximise the benefit for TLS but not the benefit
+  HTTP/TLS often appears to maximize the benefit for TLS but not the benefit
   for the combination of both.
 </t>
 
@@ -180,7 +180,7 @@
 <t>
   The application of TLS forces point-to-point flows which cuts out
   intermediaries and can lead to significant drawbacks. It reduces e.g. the
-  optimization options which translates into increasing traffic volumes in
+  optimization options which translate into increasing traffic volumes in
   access networks, higher latency and overall decreasing quality of experience
   for users.
 </t>
@@ -191,7 +191,7 @@
   confidentiality in order to meet their legal obligations (enterprises).
 </t>
 <t>
-  We suggest the solution to the challenge lies in "adding color". An example
+  We suggest the solution to the challenge lies in "adding color". Example
   of this are fine-grained intermediary-aware end-to-end protocols. 
 </t>
 <t>
@@ -215,7 +215,7 @@
   <t>To improve security and user-controlled privacy.</t>
   <t>To minimize passive interception and man in the middle attacks.</t>
   <t>To allow the client (user) and the server (content provider) to negotiate what and whom they want to give (or not) visibility into their traffic flows.</t>
-  <t>To enable multiple levels of optimization that don't conflict with each other and either meet all parties expectations or maximise the benefit to as many involved parties as possible.</t>
+  <t>To enable multiple levels of optimization that don't conflict with each other and either meet all parties expectations or maximize the benefit to as many involved parties as possible.</t>
 </list></t>
 <t>
   In a world of TLS and https only, it is difficult to achieve in particular objectives 3. and 4.
@@ -259,10 +259,10 @@ This refers to the notion of "fine-grained" control.</t>
 
 <section title="Benefits for the content provider, for the users, for the intermediaries">
 <t>
-  An object security approach will allow the different parties to establis
+  An object security approach will allow the different parties to establish
   end-to-end and hop-by-hop security mechanisms to different data and metadata
   elements, and therefore address what can be seen as conflicting requirements
-  in terms of optimization and security capabilitites.
+  in terms of optimization and security capabilities.
 </t>
 <t>  
 The following benefits will arise for the different stakeholders:
@@ -274,7 +274,7 @@ Content providers:
 <t>Can select which parts of their content shall be secured or not and how content shall be securely retrievable.</t>
 <t>Can increase their confidence in secure temporary content storage during delivery through encrypting/signing sensitive content objects.</t>
 <t>Can leverage the business services of 3rd parties (intermediaries) through enabling the intermediaries to perform value-added services. Content providers may outsource particular tasks (like caching, or offering higher security level to users) to intermediaries.</t>
-<t>When using the services of content delivery networks, can benefit from faster, optimised delivery over the "last mile" (as seen from the perspective of a content delivery network). Content delivery networks can optimise delivery on behalf of content providers over the first and middle mile, however they often rely on other ISPs and mobile network operators to deliver content over the last mile. Intermediaries in the last mile can optimise traffic engineering.</t>
+<t>When using the services of content delivery networks, can benefit from faster, optimized delivery over the "last mile" (as seen from the perspective of a content delivery network). Content delivery networks can optimize delivery on behalf of content providers over the first and middle mile, however they often rely on other ISPs and mobile network operators to deliver content over the last mile. Intermediaries in the last mile can optimize traffic engineering.</t>
 </list>
 </t>
 <t>
@@ -292,12 +292,12 @@ Intermediaries:
 <t>Can play their specific roles in content delivery and communication on behalf of content providers, like 
 <list style="symbols">
 <t>Caching of content on behalf of content providers</t>
-<t>Optimisation of content for optimal delivery on behalf of content providers</t>
+<t>Optimization of content for optimal delivery on behalf of content providers</t>
 <t>Video pacing on behalf of content providers.</t>
 </list>
 </t>
 <t>Can provide value-added services on behalf of users like parental control, malware detection etc.</t>
-<t>Can optimise content delivery and data communication within a network they are associated with or control e.g. through traffic engineering and traffic management by taking into account the inherent needs of content types and the explicit real- and non-real-time requirements of content providers and content delivery networks. Thereby, intermediaries contribute to an improved "end-to-end" user experience in the interest of both users and content providers.
+<t>Can optimize content delivery and data communication within a network they are associated with or control e.g. through traffic engineering and traffic management by taking into account the inherent needs of content types and the explicit real- and non-real-time requirements of content providers and content delivery networks. Thereby, intermediaries contribute to an improved "end-to-end" user experience in the interest of both users and content providers.
 <list style="symbols">
 <t>Intermediaries are enabled to perform congestion management and can therefore reduce latency and response times.</t>
 </list></t>
@@ -314,7 +314,7 @@ Intermediaries:
   As one of our first tasks, we intend to perform a detailed analysis of this related work, producing a list of the gaps of each technology solution in the scenarios we foresee. In particular, we have already identified at least a couple of such related work:
   <list style="symbols">
     <t>JOSE, which stands for "JSON Object Signing and Encryption". It is a series of standards produced by the IETF under the JOSE charter (<eref target="https://datatracker.ietf.org/wg/jose/charter/"/>) offering encryption, digital signatures, and Message Authentication Codes (MACs).</t>
-    <t>Subresource Integrity (<xref target="SRI"/>), a W3C specification defining mechanisms by which user agents may verify that a fetched resource has been delivered without unexpected manipulation.</t>
+    <t>"Subresource Integrity" (<xref target="SRI"/>), a W3C specification defining mechanisms by which user agents may verify that a fetched resource has been delivered without unexpected manipulation.</t>
   </list>
 </t>
 </section>
@@ -392,7 +392,7 @@ Intermediaries:
   John Mattsson,
   Sanjay Mishra,
   Robert Moskowitz,
-	Kevin Smith,
+	Kevin Smith, and
   Dan Wing.
 </t>
 </section>

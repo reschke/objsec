@@ -4,7 +4,7 @@
 Network Working Group                                           D. Druta
 Internet-Draft                                                      AT&T
 Intended status: Standards Track                              T. Fossati
-Expires: May 7, 2015                                      Alcatel-Lucent
+Expires: May 9, 2015                                      Alcatel-Lucent
                                                                 M. Ihlar
                                                                 Ericsson
                                                                  G. Klas
@@ -13,7 +13,7 @@ Expires: May 7, 2015                                      Alcatel-Lucent
                                                           Telefonica I+D
                                                          J. Reschke, Ed.
                                                               greenbytes
-                                                        November 3, 2014
+                                                        November 5, 2014
 
 
   A Rationale for Fine-grained Intermediary-aware End-to-End Protocols
@@ -21,7 +21,7 @@ Expires: May 7, 2015                                      Alcatel-Lucent
 
 Abstract
 
-   A tremendous growth in different uses of the Internet has let to a
+   A tremendous growth in different uses of the Internet has led to a
    growing need to protect data sent over public networks, including
    data sent via http.  Use of end-to-end TLS for the majority of
    traffic looks at first a most feasible response.  However, the web
@@ -32,7 +32,7 @@ Abstract
    or proxies that provide instrumental services.  The need for greater
    privacy seems to collide with the equally growing desire for better
    end-to-end performance and user experience.  As an example, the use
-   of HTTP/TLS often appears to maximise the benefit for TLS but not the
+   of HTTP/TLS often appears to maximize the benefit for TLS but not the
    benefit for the combination of both.
 
    This document describes the above dichotomy and lays out a number of
@@ -74,7 +74,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on May 7, 2015.
+   This Internet-Draft will expire on May 9, 2015.
 
 Copyright Notice
 
@@ -185,9 +185,9 @@ Table of Contents
 
    The application of TLS forces point-to-point flows which cuts out
    intermediaries and can lead to significant drawbacks.  It reduces
-   e.g. the optimization options which translates into increasing
-   traffic volumes in access networks, higher latency and overall
-   decreasing quality of experience for users.
+   e.g. the optimization options which translate into increasing traffic
+   volumes in access networks, higher latency and overall decreasing
+   quality of experience for users.
 
    It can be observed that ignoring the role of intermediaries on the
    Internet does not necessarily make the Internet more secure.  In
@@ -195,8 +195,8 @@ Table of Contents
    promise of e2e integrity and confidentiality in order to meet their
    legal obligations (enterprises).
 
-   We suggest the solution to the challenge lies in "adding color".  An
-   example of this are fine-grained intermediary-aware end-to-end
+   We suggest the solution to the challenge lies in "adding color".
+   Example of this are fine-grained intermediary-aware end-to-end
    protocols.
 
    Assuming the existence of such a fine-grained protocol, the following
@@ -223,7 +223,7 @@ Table of Contents
 
    4.  To enable multiple levels of optimization that don't conflict
        with each other and either meet all parties expectations or
-       maximise the benefit to as many involved parties as possible.
+       maximize the benefit to as many involved parties as possible.
 
    In a world of TLS and https only, it is difficult to achieve in
    particular objectives 3. and 4.
@@ -295,10 +295,10 @@ Table of Contents
     intermediaries
 
    An object security approach will allow the different parties to
-   establis end-to-end and hop-by-hop security mechanisms to different
+   establish end-to-end and hop-by-hop security mechanisms to different
    data and metadata elements, and therefore address what can be seen as
    conflicting requirements in terms of optimization and security
-   capabilitites.
+   capabilities.
 
    The following benefits will arise for the different stakeholders:
 
@@ -322,12 +322,12 @@ Table of Contents
       intermediaries.
 
    o  When using the services of content delivery networks, can benefit
-      from faster, optimised delivery over the "last mile" (as seen from
+      from faster, optimized delivery over the "last mile" (as seen from
       the perspective of a content delivery network).  Content delivery
-      networks can optimise delivery on behalf of content providers over
+      networks can optimize delivery on behalf of content providers over
       the first and middle mile, however they often rely on other ISPs
       and mobile network operators to deliver content over the last
-      mile.  Intermediaries in the last mile can optimise traffic
+      mile.  Intermediaries in the last mile can optimize traffic
       engineering.
 
    Users:
@@ -355,7 +355,7 @@ Table of Contents
 
       *  Caching of content on behalf of content providers
 
-      *  Optimisation of content for optimal delivery on behalf of
+      *  Optimization of content for optimal delivery on behalf of
          content providers
 
       *  Video pacing on behalf of content providers.
@@ -363,7 +363,7 @@ Table of Contents
    o  Can provide value-added services on behalf of users like parental
       control, malware detection etc.
 
-   o  Can optimise content delivery and data communication within a
+   o  Can optimize content delivery and data communication within a
       network they are associated with or control e.g. through traffic
       engineering and traffic management by taking into account the
       inherent needs of content types and the explicit real- and non-
@@ -397,7 +397,7 @@ Table of Contents
       encryption, digital signatures, and Message Authentication Codes
       (MACs).
 
-   o  Subresource Integrity ([SRI]), a W3C specification defining
+   o  "Subresource Integrity" ([SRI]), a W3C specification defining
       mechanisms by which user agents may verify that a fetched resource
       has been delivered without unexpected manipulation.
 
@@ -452,7 +452,7 @@ Table of Contents
    The following people are not listed as authors, but contributed
    significantly to the discussions leading to this document: Liliana
    Dinale, Vijay Gurbani, Mike Jones, Eliot Lear, Salvatore Loreto, John
-   Mattsson, Sanjay Mishra, Robert Moskowitz, Kevin Smith, Dan Wing.
+   Mattsson, Sanjay Mishra, Robert Moskowitz, Kevin Smith, and Dan Wing.
 
 14.  Informative References
 
